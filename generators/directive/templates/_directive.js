@@ -8,7 +8,7 @@
 
     directive.restrict = 'EA';
     directive.templateUrl = '<%= htmlTplFilePath %>';
-    directive.link = postLinkFn;
+    directive.link = _postLinkFn;
     directive.controller = '<%= ctrlName %>';
     directive.controllerAs = '<%= ctrlAsName %>';
 
@@ -17,8 +17,12 @@
     return directive;
     //////////////////////////////////////////////////////////////////////////
 
-    function postLinkFn(scope, element, attrs) {
+    function _postLinkFn(scope, element, attrs) {
+      $log.log('running <%= directiveName %> _postLinkFn');
 
+      element.on('$destroy', _elmOnDestroyCb);
+    }
+    function _elmOnDestroyCb() {
     }
   }
 
