@@ -2,7 +2,7 @@
   angular.module('gtjnow.directives').directive('<%= name %>', <%= directiveName %>);
   angular.module('gtjnow.directives').controller('<%= ctrlName %>', <%= ctrlName %>);
 
-  function <%= directiveName %>($log, $scope, $state, $stateParams) {
+  function <%= directiveName %>($log, $state, $stateParams) {
     var directive = {};
     $log.log('instantiating <%= directiveName %>');
 
